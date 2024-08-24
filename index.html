@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI Calculator</title>
+    <link rel="stylesheet" href="/css/stylle.css">
+    <link rel="stylesheet" href="/css/fontawesome-free-6.4.2-web/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="main-box">
+            <form class="left box">
+                <label for="loan amount">Loan amount ($)</label>
+                <input type="number" id="amount" min="1000" max="10000000" maxlength="8" placeholder="Enter loan amount" required>
+    
+                <label for="interest rate amount">Interest rate (%)</label>
+                <input type="number" id="interest" min="1" max="99" step="0.01" maxlength="4" placeholder="Enter interest rate" required>
+    
+                <label for="loan tenure">Loan tenure (yr/mo)</label>
+                <input type="number" id="tenure" min="1" max="365" maxlength="3" placeholder="Enter loan duration" required>
+    
+                <div class="choice-box">
+                    <input type="radio" name="btn" id="yearly" checked>
+                    <label for="yearly">Yearly</label>
+
+                    <input type="radio" name="btn" id="monthly">
+                    <label for="monthly">Monthly</label>
+                </div>
+
+                <button>Calculator</button>
+            </form>
+    
+            <div class="right box">
+                <label>Monthly EMI</label>
+                <b id="emi"></b>
+
+                <label>Total interest payable</label>
+                <b id="payable"></b>
+
+                <label>Total payment</label>
+                <b id="payment"></b>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="main.js"></script>
+</html>

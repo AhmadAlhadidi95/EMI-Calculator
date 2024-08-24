@@ -1,0 +1,127 @@
+:root {
+    --white: #f1f1f1;
+    --black: #1f1f1f;
+    --color-1: #003844;
+    --color-2: #006C67;
+    --color-3: #F194B4;
+    --color-4: #FFB100;
+    --shadow: -2px 2px 10px -3px rgba(0,0,0,0.75);
+    --bow: 6px;
+    --smooth: .3s;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: var(--white);
+}
+
+body {
+    font-family: Tahoma, Arial;
+}
+
+.container {
+    height: 100vh;
+    background: url(/images/bg-1.jpg) no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-box {
+    background-color: rgba(0, 56, 68, 0.5);
+    width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: var(--bow);
+    box-shadow: var(--shadow);
+
+    & label {
+        display: block;
+    }
+
+    .box {
+        flex: 1 1 300px;
+    }
+
+    .left {
+        
+        & input {
+            background-color: var(--color-1);
+            width: 100%;
+            padding: 10px 12px;
+            margin: 8px 0;
+            font-size: 16px;
+            border: none;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            outline: none;
+        }
+        & input::placeholder {
+            color: var(--white);
+        }
+        & input:hover::placeholder,
+        & input:focus::placeholder {
+            opacity: 0;
+            transition: var(--smooth);
+        }
+
+        .choice-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            column-gap: 1rem;
+            
+            & input[type="radio"] {
+                display: none;
+            }
+
+            & label {
+                flex: 1;
+                background-color: rgba(0, 56, 68, 0.5);;
+                padding: 10px;
+                text-align: center;
+                border-radius: var(--bow);
+                box-shadow: var(--shadow);
+                cursor: pointer;
+                transition: var(--smooth);
+            }
+
+            & input[type="radio"]:checked + label {
+                background-color: var(--color-1);
+            }
+        }
+
+        & button {
+            width: 100%;
+            background-color: rgba(0, 56, 68, 0.5);
+            padding: 12px;
+            margin-top: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: var(--bow);
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            transition: var(--smooth);
+        }
+        & button:hover {
+            background-color: var(--color-1);
+        }
+    }
+
+    .right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        row-gap: 10px;
+        background-color: var(--color-1);
+        padding: 1rem;
+        border-radius: var(--bow);
+        box-shadow: var(--shadow);
+    }
+}
